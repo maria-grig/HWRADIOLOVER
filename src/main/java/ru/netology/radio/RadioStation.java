@@ -7,12 +7,6 @@ public class RadioStation {
     private int totalRadioStations;
     private int currentStation = minStation;
 
-    public RadioStation(int maxStation, int minStation) {
-        this.maxStation = maxStation;
-        this.minStation = minStation;
-        this.currentStation = minStation;
-    }
-
     public RadioStation(int totalRadioStations) {
         this.totalRadioStations = totalRadioStations;
         this.maxStation = totalRadioStations - 1;
