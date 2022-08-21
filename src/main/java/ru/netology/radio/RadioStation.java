@@ -36,7 +36,7 @@ public class RadioStation {
     }
 
     public void setCurrentStation(int currentStation) {
-        if (currentStation >= 0 && currentStation <= maxStation) {
+        if (currentStation >= minStation && currentStation <= maxStation) {
             this.currentStation = currentStation;
         } else {
             return;
@@ -60,4 +60,5 @@ public class RadioStation {
         }
         currentStation--;
     }
+
 }
