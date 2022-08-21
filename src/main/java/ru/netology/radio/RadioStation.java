@@ -17,14 +17,6 @@ public class RadioStation {
         this.maxStation = totalRadioStations - 1;
     }
 
-    public int getMaxStation() {
-        return maxStation;
-    }
-
-    public int getMinStation() {
-        return minStation;
-    }
-
     public int getCurrentStation() {
         return currentStation;
     }
