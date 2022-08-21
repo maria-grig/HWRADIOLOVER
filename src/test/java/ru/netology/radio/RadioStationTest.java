@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioStationTest {
     RadioStation service = new RadioStation();
-
     @Test// default number of stations, regular positive case to switch stations
     public void shouldSwitchToNextStationTestOne() {
+
         service.setCurrentStation(8);
         service.NextStation();
         assertEquals(9, service.getCurrentStation());
@@ -48,20 +48,20 @@ class RadioStationTest {
     public void shouldSwitchToPrevStationTestTwo() {
         service.setCurrentStation(9);
         service.prevStation();
-        assertEquals(0, service.getCurrentStation());
+        assertEquals(8, service.getCurrentStation());
     }
 
     @Test // default number of stations, should switch to the last station from non-existing station
     public void shouldSwitchToPrevStationTestThree() {
         service.setCurrentStation(10);
         service.prevStation();
-        assertEquals(9, service.getCurrentStation());
+        assertEquals(8, service.getCurrentStation());
     }
     @Test // default number of stations, should switch to the last station from non-existing station
     public void shouldSwitchToPrevStationTestFour() {
         service.setCurrentStation(-1);
         service.prevStation();
-        assertEquals(9, service.getCurrentStation());
+        assertEquals(8, service.getCurrentStation());
     }
 
 }
