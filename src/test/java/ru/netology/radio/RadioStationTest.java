@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RadioStationTest {
 
 
-    @Test //
+    @Test // set the current station
     public void shouldSetTheCurrentStation(){
         RadioStation service = new RadioStation();
         service.setCurrentStation(5);
