@@ -1,9 +1,10 @@
 package ru.netology.radio;
 
 public class RadioVolume {
+
     private int currentVolume;
 
-        public int getCurrentVolume() {
+    public int getCurrentVolume() {
             return currentVolume;
         }
 
