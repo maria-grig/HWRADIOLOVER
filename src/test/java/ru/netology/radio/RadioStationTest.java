@@ -6,10 +6,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioStationTest {
-    RadioStation service = new RadioStation();
+
+
+    @Test //
+    public void shouldSetTheCurrentStation(){
+        RadioStation service = new RadioStation();
+        service.setCurrentStation(5);
+        Assertions.assertEquals(5, service.getCurrentStation());
+    }
 
     @Test// default number of stations, regular positive case to switch stations
     public void shouldSwitchToNextStationTestOne() {
+        RadioStation service = new RadioStation();
         service.setCurrentStation(8);
         service.NextStation();
         assertEquals(9, service.getCurrentStation());
@@ -17,6 +25,7 @@ class RadioStationTest {
 
     @Test // default number of stations, should switch from the last station to the first station
     public void shouldSwitchToNextStationTestTwo() {
+        RadioStation service = new RadioStation();
         service.setCurrentStation(9);
         service.NextStation();
         assertEquals(0, service.getCurrentStation());
@@ -24,6 +33,7 @@ class RadioStationTest {
 
     @Test // default number of stations, should switch to the first station from non-existing station
     public void shouldSwitchToNextStationTestThree() {
+        RadioStation service = new RadioStation();
         service.setCurrentStation(10);
         service.NextStation();
         assertEquals(1, service.getCurrentStation());
@@ -31,6 +41,7 @@ class RadioStationTest {
 
     @Test // default number of stations, should switch to the first station from non-existing station
     public void shouldSwitchToNextStationTestFour() {
+        RadioStation service = new RadioStation();
         service.setCurrentStation(-1);
         service.NextStation();
         assertEquals(1, service.getCurrentStation());
@@ -97,6 +108,7 @@ class RadioStationTest {
 
     @Test// default number of stations, regular positive case to switch stations
     public void shouldSwitchToPrevStationTestOne() {
+        RadioStation service = new RadioStation();
         service.setCurrentStation(8);
         service.prevStation();
         assertEquals(7, service.getCurrentStation());
@@ -104,6 +116,7 @@ class RadioStationTest {
 
     @Test// default number of stations, should switch to the previous station from the first station
     public void shouldSwitchToPrevStationTestTwo() {
+        RadioStation service = new RadioStation();
         service.setCurrentStation(9);
         service.prevStation();
         assertEquals(8, service.getCurrentStation());
@@ -111,12 +124,14 @@ class RadioStationTest {
 
     @Test // default number of stations, should switch to the last station from non-existing station
     public void shouldSwitchToPrevStationTestThree() {
+        RadioStation service = new RadioStation();
         service.setCurrentStation(10);
         service.prevStation();
         assertEquals(8, service.getCurrentStation());
     }
     @Test // default number of stations, should switch to the last station from non-existing station
     public void shouldSwitchToPrevStationTestFour() {
+        RadioStation service = new RadioStation();
         service.setCurrentStation(-1);
         service.prevStation();
         assertEquals(8, service.getCurrentStation());
